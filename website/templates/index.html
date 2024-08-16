@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <h1>Route Finder</h1>
+    <form id="routeForm">
+        <label for="start">Start Address:</label>
+        <input type="text" id="start" name="start" required>
+        <br><br>
+        <label for="end">End Address:</label>
+        <input type="text" id="end" name="end" required>
+        <br><br>
+        <input type="submit" value="Find Route">
+    </form>
+
+    <div id="map" style="width: 100%; height: 600px; margin-top: 20px;"></div>
+    <div id="speedLimit" style="margin-top: 10px; font-size: 16px; color: #333;">
+        Suggested Speed Limit: <span id="speedValue"></span> km/h
+    </div>
+</body>
+</html>
